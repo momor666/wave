@@ -29,7 +29,7 @@
     <body>
     	<div id="container">
     		<?php include('views/menubar.php'); ?>
-    		<?php include('views/brand-add.php'); ?>
+    		<?php include('views/company.php'); ?>
 			<?php include('views/footer.php'); ?>
     	</div>
 

@@ -28,8 +28,6 @@ class CategoryController{
         }
 
         return $categories;
-        
     }
-
 }
 ?>
