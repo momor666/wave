@@ -10,7 +10,7 @@ class CategoryController{
     
     private $db;
     
-    private $db_table = "project_category";
+    private $db_table = "category";
     
     public function __construct(){
         $this->db = new DbConnect();

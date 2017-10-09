@@ -6,11 +6,11 @@ header('Content-Type: application/json; charset=utf-8');
  
 include_once '../config/db-connect.php';
 
-class BrandController{
+class CompanyController{
     
     private $db;
     
-    private $db_table = "product_brand";
+    private $db_table = "company";
     
     public function __construct(){
         $this->db = new DbConnect();

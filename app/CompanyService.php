@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 date_default_timezone_set("UTC");
 header('Content-Type: application/json; charset=utf-8');
 
-require_once 'Controllers/BrandController.php';
+require_once 'Controllers/CompanyController.php';
 
 include_once '../config/security.php';
 
@@ -34,31 +34,31 @@ if (isset($_POST['name']) && isset($_POST['description']) && isset($_POST['ui'])
     $address = $_POST["address"];
 }
 
-$brandObject = new BrandController();
+$company = new CompanyController();
 
 if($state == "c"){
 
-    if($brandObject->isExist($name)){
+    if($company->isExist($name)){
         $json = array();
         $json['success'] = 0;
         $json['message'] = "brand already.";       
         echo json_encode($json); 
     } else {
-        echo json_encode($brandObject->create($name, $description, $user_id, $category_id, $language, $mobile, $email, $address, savePhoto()));
+        echo json_encode($company->create($name, $description, $user_id, $category_id, $language, $mobile, $email, $address, savePhoto()));
     }
 }
 else if($state == "u" && !empty($name) && !empty($description) && !empty($user_id)){
-    echo json_encode($brandObject->update($name, $description, $user_id));
+    echo json_encode($company->update($name, $description, $user_id));
 }
 else if ($state == "r"){
-    echo json_encode($brandObject->getAll());
+    echo json_encode($company->getAll());
 }else {
  echo json_encode(["result" => "invalid request!!!"]);
 }
 
 function savePhoto(){
     $folder = date("Y-m");
-    $target_dir = "../uploads/product_brand_icons/".$folder."/";
+    $target_dir = "../uploads/images/".$folder."/";
     if(!file_exists($target_dir))
         mkdir($target_dir, 0777, true);
         
