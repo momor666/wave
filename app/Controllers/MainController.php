@@ -1,12 +1,5 @@
 <?php
 	class MainController{
-		
-		public $currency_info = array(
-			array('code' => 'EUR', 'name' => 'Euro'),
-			array('code' => 'USD', 'name' => 'US Dollar'),
-			array('code' => 'MNT', 'name' => 'Mongolian Tugrug')
-		);
-		
 	
 		function get_random_string($valid_chars, $length){
     

@@ -15,12 +15,12 @@ class CompanyController{
     public function __construct(){
         $this->db = new DbConnect();
     }
-    // Ижил нэртэй брэнд байгаа эсэх
+    
     public function isExist($name){
         $query = "select * from ".$this->db_table." where name = '$name'";
         return mysqli_num_rows(mysqli_query($this->db->getDb(), $query)) > 0;
     }
-    // Брэнд нэмэх
+    
     public function create($name, $description, $userId, $catID, $language, $mobile, $email, $address, $icon){
             
         $query = "INSERT INTO ".$this->db_table." (`name`, `email`, `phone`, `address`, `sort_order`, `folder`, `icon_image`, `hit_counter`, `is_active`, `is_featured`, `description`, `project_category_id`, `language`, `ip_address`, `created_user_id`, `updated_user_id`, `created_at`, `updated_at`) 
@@ -43,7 +43,7 @@ class CompanyController{
         return $json;
         
     }
-    // Бүх брэнд буцаах
+    
     public function getAll () {
         $sql_query = "SELECT * 
              FROM ".$this->db_table." 
