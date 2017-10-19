@@ -58,7 +58,7 @@ CREATE TABLE `product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `description` longtext NOT NULL,
-  `photo_id` varchar(10) NOT NULL,
+  `photo_id` int(11) NOT NULL,
   `price` double(18,2) DEFAULT NULL,
   `currency` varchar(10) DEFAULT NULL,
   `company_id` int(11) DEFAULT NULL,
@@ -141,7 +141,7 @@ ALTER TABLE `category`
 ALTER TABLE `product`
   ADD FOREIGN KEY (`company_id`) REFERENCES `company` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD FOREIGN KEY (`photo_id`) REFERENCES `product_photo` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD FOREIGN KEY (`photo_id`) REFERENCES `product_photo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `product_photo`
   ADD FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
