@@ -1,26 +1,16 @@
 <?php
 
-include dirname(__FILE__) . '/vendor/altorouter/altorouter/AltoRouter.php';
+$request_uri = explode('?', $_SERVER['REQUEST_URI'], 2);
 
-$router = new AltoRouter();
-
-$router->setBasePath('');
-
-$router->map('GET','/', 'views/home.php', 'home');
-
-$router->map('GET','/admin', 'views/dashboard.php', 'dashboard');
-$router->map('GET','/org-add', 'views/organization-add.php', 'category-add');
-
-$router->map( 'GET', '/', function() {
-    require __DIR__ . '/views/home.php';
-});
-
-$match = $router->match();
-if($match) {
-  require $match['target'];
+switch ($request_uri[0]) {
+    case '/':
+        require 'views/home.php';
+        break;
+    case '/dashboard':
+        require 'views/dashboard.php';
+        break;
+    default:
+        header('HTTP/1.0 404 Not Found');
+        require 'views/404.php';
+        break;
 }
-else {
-  header("HTTP/1.0 404 Not Found");
-  require 'views/404.php';
-}
-?>

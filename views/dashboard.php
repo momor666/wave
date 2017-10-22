@@ -1,8 +1,7 @@
 <?php
-	include_once('config/database.php'); 
-?>
-
-<?php
+	require_once('config/database.php'); 
+	require_once('header.php');
+	require_once('left-sidebar.php');
 
 	//Нийт ангилал
 	$sql_category = "SELECT COUNT(*) as num FROM category";
@@ -21,12 +20,8 @@
     $total_company = mysqli_query($connect, $sql_company);
     $total_company = mysqli_fetch_array($total_company);
     $total_company = $total_company['num'];
-
 ?>
 
-
-<?php include('header.php'); ?>
-<?php include('left-sidebar.php'); ?>
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
@@ -274,4 +269,4 @@
             
         </div>
     </section>
-	<?php include('footer.php'); ?>
+	<?php require_once('footer.php'); ?>
