@@ -1,13 +1,19 @@
 <?php
-header("Content-Type: text/html");
 
 include dirname(__FILE__) . '/vendor/altorouter/altorouter/AltoRouter.php';
+
 $router = new AltoRouter();
 
 $router->setBasePath('');
 
-$router->map('GET','/', 'home.php', 'home');
-$router->map('GET','/home/', 'home.php', 'home-home');
+$router->map('GET','/', 'views/home.php', 'home');
+
+$router->map('GET','/admin', 'views/dashboard.php', 'dashboard');
+$router->map('GET','/org-add', 'views/organization-add.php', 'category-add');
+
+$router->map( 'GET', '/', function() {
+    require __DIR__ . '/views/home.php';
+});
 
 $match = $router->match();
 if($match) {

@@ -46,6 +46,8 @@
 					$_SESSION['timeout'] = $currentTime + $expired;
 					header("location: dashboard.php");
 				}else{
+				    
+					header("location: home.php");
 					$error['failed'] = "<span class='label label-danger'>Хэрэглэгчийн нэр нууц үг буруу байна!</span>";
 				}
 			}

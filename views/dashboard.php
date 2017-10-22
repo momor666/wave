@@ -17,7 +17,7 @@
 	$total_product = $total_product['num'];
 
 
-    $sql_company = "SELECT COUNT(*) as num FROM brand";
+    $sql_company = "SELECT COUNT(*) as num FROM company";
     $total_company = mysqli_query($connect, $sql_company);
     $total_company = mysqli_fetch_array($total_company);
     $total_company = $total_company['num'];
@@ -25,6 +25,8 @@
 ?>
 
 
+<?php include('header.php'); ?>
+<?php include('left-sidebar.php'); ?>
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
@@ -272,3 +274,4 @@
             
         </div>
     </section>
+	<?php include('footer.php'); ?>

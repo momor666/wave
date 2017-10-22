@@ -117,6 +117,8 @@
     }
 ?>
    
+<?php include('views/header.php'); ?>
+<?php include('views/left-sidebar.php'); ?>
     <section class="content">
         <div class="container-fluid">
             
@@ -208,3 +210,5 @@
             </div>
         </div>
     </section>
+
+<?php include('views/footer.php'); ?>
