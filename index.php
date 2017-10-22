@@ -6,11 +6,17 @@ switch ($request_uri[0]) {
     case '/':
         require 'views/home.php';
         break;
+    case '/org':
+        require 'views/organization.php';
+        break;
+    case '/cat-add':
+        require 'views/category-add.php';
+        break;
     case '/dashboard':
         require 'views/dashboard.php';
         break;
     default:
-        header('HTTP/1.0 404 Not Found');
+        
         require 'views/404.php';
         break;
 }
