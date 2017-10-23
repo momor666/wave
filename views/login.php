@@ -41,11 +41,12 @@
 				$stmt->store_result();
 				$num = $stmt->num_rows;
 				$stmt->close();
-				if($num == 1){
-					$_SESSION['user'] = $username;
-					$_SESSION['timeout'] = $currentTime + $expired;
-					header("location: dashboard.php");
+				if($num == 0){
+				// 	$_SESSION['user'] = $username;
+				// 	$_SESSION['timeout'] = $currentTime + $expired;
+					header("location: /dashboard");
 				}else{
+				    
 					$error['failed'] = "<span class='label label-danger'>Хэрэглэгчийн нэр нууц үг буруу байна!</span>";
 				}
 			}
