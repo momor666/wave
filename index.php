@@ -4,7 +4,7 @@ include dirname(__FILE__) . '/vendor/altorouter/altorouter/AltoRouter.php';
 
 $router = new AltoRouter();
 
-$router->setBasePath('https://techstar-dashboard-tortuvshin.c9users.io');
+$router->setBasePath('/dashboard/');
 
 // map homepage
 $router->map( 'GET', '/', function() {
@@ -23,7 +23,7 @@ $router->map( 'GET', '/cat-add', function() {
 
 $match = $router->match();
 
-if( $match && is_callable( $match['target'] ) ) {
+if( $match && is_callable( $match['target'])) {
 	call_user_func_array( $match['target'], $match['params'] ); 
 } else {
 	// no route was matched
