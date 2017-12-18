@@ -4,7 +4,7 @@ use \core\View;
 /**
  * Home controller
  */
-class Home extends \Core\Controller
+class Home extends \core\Controller
 {
     /**
      * Show the index page
