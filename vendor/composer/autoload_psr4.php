@@ -9,4 +9,6 @@ return array(
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
+    'Core\\' => array($baseDir . '/core'),
+    'App\\' => array($baseDir . '/app'),
 );
