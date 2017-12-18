@@ -10,8 +10,14 @@
         }
     ],
     "require": {
-        "twig/twig": "^1.34",
+        "twig/twig": "~2.0",
         "filp/whoops": "^2.1",
         "altorouter/altorouter": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+             "Core\\": "core/",
+             "App\\": "app/"
+        }
     }
 }
